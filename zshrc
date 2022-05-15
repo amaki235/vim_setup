@@ -1,4 +1,5 @@
 export PATH=$HOME/:$PATH
+export GIT_EDITOR=nvim
 
 mrm (){
   cd ~/memo
@@ -44,6 +45,13 @@ sh (){
   n ~/$data.sh
 }
 
+
+alias d='docker'
+alias dc='docker compose'
+alias dcb='docker compose build'
+alias dcu='docker compose up'
+alias dcd='docker compose down'
+alias drw='docker compose run web'
 alias firefox='cd /Applications/Firefox.app/Contents/MacOS &&  ./firefox && cd'
 alias mono='cd ~/literature && n -u NONE li0.txt'
 alias syu='cd ~/literature && n -u NONE li1.txt'
@@ -88,6 +96,13 @@ alias rgm='rails g model'
 alias ..='cd ..'
 alias l='less'
 alias mc='cd ~/my_command'
+alias sc='cd ~/Screenshot'
+alias img='cd ~/Image'
+alias down='cd ~/Downloads'
+alias pdf='cd ~/PDF'
+alias mvrails='cd ~/Programming/ruby/rails'
+alias pro='cd ~/Programming'
+alias sctoimg='mv  ~/Screenshot/* ~/Image/'
 alias sp='rspec'
 alias ru='rubocop'
 # 初回シェル時のみ tmux実行

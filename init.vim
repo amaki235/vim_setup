@@ -7,6 +7,9 @@ set cursorline
 set autoindent
 set clipboard=unnamed
 set expandtab
+set autowrite
+ab ab 今日はいい天気ですね
+
 
 call plug#begin()
 Plug 'ntk148v/vim-horizon'
@@ -24,7 +27,6 @@ Plug 'preservim/nerdtree' |
 Plug 'https://github.com/posva/vim-vue.git'
 Plug 'https://github.com/tyru/open-browser.vim.git'
 Plug 'https:/github.com/lambdalisue/gina.vim.git'
-Plug 'https://github.com/tyru/open-browser.vim.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/simeji/winresizer.git'
@@ -33,6 +35,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'https://github.com/Shougo/unite.vim.git'
 Plug 'https://github.com/Shougo/neomru.vim.git'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'https://github.com/vimplugin/project.vim'
 call plug#end()
 
 
@@ -44,10 +47,20 @@ inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 inoremap <silent> jj <ESC>
 nnoremap <silent> un :<C-u>Unite buffer<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>
 noremap ss ^
 noremap ;; $
+nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 command! -nargs=0 Format :call CocAction('format')
 nmap <silent> <space>fmt <Plug>(coc-format)
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+nnoremap <Leader>o :<C-u>execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')<CR>
 let g:indent_guides_enable_on_vim_startup = 1
+let g:gitgutter_highlight_lines = 1
 
+set termguicolors
+colorscheme horizon
+let g:lightline = {}
+let g:lightline.colorscheme = 'horizon'
