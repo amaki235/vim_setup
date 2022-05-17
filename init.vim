@@ -21,10 +21,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'https://github.com/PhilRunninger/nerdtree-visual-selection.git'
-
 Plug 'b4b4r07/vim-shellutils'
 Plug 'https://github.com/alvan/vim-closetag.git'
-Plug 'easymotion/vim-easymotion
+Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/posva/vim-vue.git'
