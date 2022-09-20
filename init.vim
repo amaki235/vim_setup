@@ -3,23 +3,26 @@ syntax=on
 set number
 set tabstop=2
 set incsearch
-set clipboard=unnamed
 set cursorline
 set autoindent
+set clipboard=unnamed
 set expandtab
 set autowrite
 "set foldmethod=indent
 ab ab 今日はいい天気ですね
 
 call plug#begin()
+Plug 'https://github.com/adigitoleo/vim-mellow' " vim-mellowというスキーマ
+Plug 'https://github.com/AlessandroYorba/Breve' " Braveというスキーマ
+Plug 'https://github.com/vim-scripts/gruvbox' " gruvboxというスキーマ
 Plug 'ntk148v/vim-horizon'
 Plug 'preservim/nerdtree'
 Plug 'lambdalisue/fern.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'lambdalisue/fern-git-status.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'https://github.com/PhilRunninger/nerdtree-visual-selection.git'
 Plug 'b4b4r07/vim-shellutils'
 Plug 'https://github.com/alvan/vim-closetag.git'
@@ -28,7 +31,6 @@ Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/posva/vim-vue.git'
 Plug 'https://github.com/tyru/open-browser.vim.git'
-Plug 'https:/github.com/lambdalisue/gina.vim.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/simeji/winresizer.git'
@@ -38,6 +40,8 @@ Plug 'https://github.com/Shougo/unite.vim.git'
 Plug 'https://github.com/Shougo/neomru.vim.git'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/vimplugin/project.vim'
+Plug 'https://github.com/Shougo/vimshell.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'https://github.com/Quramy/tsuquyomi' "TypeScriptのプラグイン
 Plug 'https://github.com/vim-syntastic/syntastic' "シンタックス
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} "Tsuquyomiで必要らしい
@@ -46,6 +50,14 @@ Plug 'vim-test/vim-test' " テストプラグイン
 Plug 'https://github.com/vim-scripts/ScrollColors' " カラースキームをブラウズする
 Plug 'kyazdani42/blue-moon' " blue-moonというカラースキーム
 call plug#end()
+
+" aマクロ"
+let @a = "console.log('++++++++++++++++++++++++')"
+let @b = "p '++++++++++++++++++++++++' "
+let @c = "oconsole.log('+++++++++++++jjojj"
+let @d = "ssi// jjj"
+
+command SS :source ~/.config/nvim/init.vim
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 inoremap { {}<LEFT>
@@ -76,14 +88,19 @@ let g:gitgutter_highlight_lines = 1
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.ctp,*.php,*.vue'
 
 set termguicolors
+colorscheme gruvbox " gruvbox
+set bg=dark    " Setting dark mode gruvboxの設定
+let g:lightline = {}
 " colorscheme slate
 " colorscheme horizon
+" colorscheme mellow
+" colorscheme horizon
 " colorscheme hybrid
+" colorscheme breve
 " colorscheme blue
 " colorscheme evening
-colorscheme blue-moon
-let g:lightline = { 'colorscheme': 'blue-moon' }
-" let g:lightline = {}
+" colorscheme blue-moon
+" let g:lightline = { 'colorscheme': 'blue-moon' }
 " let g:lightline.colorscheme = 'horizon'
 
 " Rubyの文法チェック"
